@@ -1,0 +1,228 @@
+.navContainer {
+  width: 100%;
+  height: auto;
+  position: sticky;
+  position: -webkit-sticky;
+  top: -2.3rem;
+  z-index: 100;
+}
+
+.navTop {
+  padding: 0.5rem 1rem;
+  background: #fe3410;
+  font-family: var(--fontRedressed);
+  letter-spacing: 2px;
+  text-align: center;
+  color: #eee;
+
+  transition: 0.3s ease-in-out;
+}
+.hamLogo {
+  cursor: pointer;
+  position: relative;
+  display: none;
+}
+.menu_open {
+  transform: scaleY(1) !important ;
+}
+.BigNav {
+  width: 100%;
+  height: 100vh;
+  background: #fa5537;
+  position: absolute;
+  z-index: 1000;
+  top: 0;
+  transform-origin: top;
+  transform: scaleY(0);
+  transition: 0.3s ease;
+}
+.BigNav ul {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.BigNav ul li {
+  margin: 2rem 0;
+}
+.BigNav ul li a {
+  font-size: 2rem;
+  color: #fcf3f2;
+}
+.BigNav .cross {
+  cursor: pointer;
+  position: absolute;
+  top: 5%;
+  right: 5%;
+}
+nav {
+  height: 5rem;
+  background: #fa5537;
+  width: 100%;
+  color: #eee;
+  position: sticky;
+  top: 0;
+  box-shadow: 0px 3px 10px 0px rgba(50, 50, 50, 0.3);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+}
+.cross {
+  cursor: pointer;
+  width: 4rem;
+  height: 4rem;
+  opacity: 0;
+}
+.cross .line {
+  position: absolute;
+  width: 2.5rem;
+  height: 2px;
+  background: #fcf3f2;
+}
+.cross .line:nth-child(1) {
+  transform: rotate(45deg);
+}
+.cross .line:nth-child(2) {
+  transform: rotate(-45deg);
+}
+.bignavUl li a {
+  opacity: 0;
+}
+nav .logo {
+  font-family: var(--fontRedressed);
+  margin-left: 4rem;
+  font-size: 2.5rem;
+  text-shadow: 4px 4px 0px rgba(248, 95, 158, 0.3);
+  background: #fcf3f2;
+  color: #fa5537;
+  padding: 3rem 1rem;
+}
+nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 4rem;
+  height: 100%;
+}
+nav ul li {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin: 0 1rem;
+  z-index: 0;
+}
+
+nav ul li:last-child a {
+  background: #fad81e;
+  border-radius: 5px;
+  padding: 0.2rem 1rem;
+  color: var(--colDark);
+}
+
+nav ul li::before {
+  content: "";
+  background: orange;
+  height: 3px;
+  width: 100%;
+  position: absolute;
+  bottom: -3px;
+  transition: 0.3s ease;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+}
+nav ul li::after {
+  content: "";
+  background: #fcf3f2;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: -100%;
+  transition: 0.3s ease;
+  z-index: -1;
+}
+nav ul li a {
+  padding: 1rem 1rem;
+  color: #eee;
+  font-family: var(--fontRedressed);
+  transition: 0.3s ease;
+  font-size: 1rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-shadow: 0px 0px 10px rgba(150, 150, 150, 0.5);
+}
+nav ul li:hover:not(:last-child)::after {
+  top: 0;
+}
+nav ul li:hover::before {
+  bottom: 0;
+}
+nav ul li:hover:not(:last-child) a {
+  color: #fa5537;
+}
+
+.animateInFade1 {
+  animation: ainFade 0.3s ease-in both;
+  animation-delay: 0.6s;
+}
+.animateInFade2 {
+  animation: ainFade 0.3s ease-in both;
+  animation-delay: 0.8s;
+}
+.animateInFade3 {
+  animation: ainFade 0.3s ease-in both;
+  animation-delay: 1s;
+}
+.animateInFade4 {
+  animation: ainFade 0.3s ease-in both;
+  animation-delay: 1.2s;
+}
+.animateInFade5 {
+  animation: ainFade 0.3s ease-in both;
+  animation-delay: 1.6s;
+}
+
+.hamLogo .hamLine {
+  width: 2.5rem;
+  height: 2px;
+  background: #fcf3f2;
+}
+.hamLine:nth-child(1) {
+  margin-bottom: 0.5rem;
+}
+.hamLine:nth-child(2) {
+  margin-bottom: 0.5rem;
+}
+@keyframes ainFade {
+  from {
+    opacity: 0;
+    margin-left: -3rem;
+  }
+  to {
+    opacity: 1;
+    margin-left: 0;
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  nav {
+    height: 4rem;
+  }
+}
+@media only screen and (max-width: 800px) {
+  nav {
+    justify-content: space-evenly;
+  }
+  nav .logo {
+    margin-left: 0;
+  }
+  nav ul {
+    display: none;
+  }
+  .hamLogo {
+    display: block;
+  }
+}
